@@ -19,6 +19,25 @@ x=np.append(x, category_Hot_Encoded, axis=1)
 print(x)
 x=np.delete(x, 4, 1)# This removes the region coulumm which in turn would be replaced by category_Hot_Encoded
 #x=pd.DataFrame(x) to view it as  a data frame
+#Getting rid of categorical data of Gender...
+category_Hot_Encoded=pd.get_dummies(x[:, 1])
+x=np.append(x, category_Hot_Encoded, axis=1)
+print(x)
+x=np.delete(x, 1, 1)# This removes the region coulumm which in turn would be replaced by category_Hot_Encoded
+#x=pd.DataFrame(x) to view it as  a data frame
+#Now we remove the female categorical data to avoid the categorical data trap
+x=np.delete(x, 15, 1)
+#x=pd.DataFrame(x)...just to visualize#Getting rid of categorical data of Gender...
+#Getting rid of categorical data of Goals...
+category_Hot_Encoded=pd.get_dummies(x[:, 4])
+x=np.append(x, category_Hot_Encoded, axis=1)
+print(x)
+x=np.delete(x, 4, 1)# This removes the region coulumm which in turn would be replaced by category_Hot_Encoded
+#Getting rid of categorical data of Seats...
+category_Hot_Encoded=pd.get_dummies(x[:, 7])
+x=np.append(x, category_Hot_Encoded, axis=1)
+print(x)
+x=np.delete(x, 7, 1)# This removes the region coulumm which in turn would be replaced by category_Hot_Encoded
 
 """
 #Making the data polynomial...
