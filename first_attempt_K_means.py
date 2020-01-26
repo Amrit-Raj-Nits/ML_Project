@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Jan 10 17:43:45 2020
-
 @author: Amrit Raj
 """
 import numpy as np
@@ -153,6 +152,23 @@ plt.ylabel('Spending Score----->')
 plt.legend()
 plt.show()		                        
 
+#Counting the number of 0's to 3/s....
+zero=0
+one=0
+two=0
+three=0
+
+for i in y_kmeans:
+	if(i==1):
+		one+=1
+	elif(i==2):
+		two+=1
+	elif(i==3):
+		three+=1
+	elif(i==0):
+		zero+=1
+		
+#Hence, these are the number of people in the respective groups
 
 """
 #Visualization.......
@@ -165,11 +181,6 @@ plt.xlabel('Scholar_ID---->')
 plt.ylabel('Spending Score----->')
 plt.legend()
 plt.show()
-
-
-
-
-
 #Nasha
 clist = ['A','G','C','X','N']
 for i in range(0, 328):
@@ -184,7 +195,6 @@ for i in range(0, 328):
     
 tags = x[4].apply(pd.Series)
 tags = tags.rename(columns = lambda a : 'tag_' + str(a))
-
 x = pd.concat([x[:], tags[:]], axis=1)
 x=pd.DataFrame(x)
 x.rename(columns = {'tag_0':'A'}, inplace = True)
@@ -204,7 +214,6 @@ x.rename(columns = {'tag_4':'N'}, inplace = True)
 
 
 """
-
 #for i in range(5):
 	
 	#Making the data polynomial...
@@ -248,7 +257,4 @@ x.rename(columns = {'tag_4':'N'}, inplace = True)
 	plt.ylabel('RH--->')
 	plt.show()
 	
-
-
-
 """
