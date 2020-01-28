@@ -1,6 +1,7 @@
 """
 Created on Sat Jan 25 16:36:46 2020
-@author: Arpit
+@author: Amrit Raj
+@Acknoledgment: Arpit, Tapan, and Ankit
 """
 import numpy as np
 import pandas as pd
